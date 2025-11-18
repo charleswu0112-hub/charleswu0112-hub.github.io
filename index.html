@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Hsuan-Yu Wu((Charles)</title>
+  <title>Hsuan-Yu (Charles) Wu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
@@ -191,24 +191,18 @@
     }
 
     .news-list,
-    .edu-list,
-    .exp-list,
-    .honor-list {
+    .edu-list {
       list-style: none;
       font-size: 14px;
       color: var(--text-sub);
       padding-left: 0;
     }
 
-    .news-item,
-    .exp-item,
-    .honor-item {
+    .news-item {
       margin-bottom: 8px;
     }
 
-    .news-date,
-    .exp-date,
-    .honor-date {
+    .news-date {
       font-weight: 600;
       margin-right: 4px;
     }
@@ -220,25 +214,6 @@
     .edu-degree {
       font-weight: 600;
       color: #111827;
-    }
-
-    .exp-role {
-      font-weight: 600;
-      color: #111827;
-    }
-
-    .exp-title {
-      font-style: italic;
-    }
-
-    .exp-location {
-      color: var(--text-sub);
-    }
-
-    .exp-bullets {
-      margin-top: 3px;
-      margin-left: 16px;
-      list-style: disc;
     }
 
     .footer {
@@ -271,10 +246,10 @@
     <header class="site-header">
       <h1 class="site-title">Hsuan-Yu (Charles) Wu</h1>
       <nav class="site-nav">
-        <a href="#home">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="#honors">Honors</a>
-        <a href="#education">Education</a>
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="honors.html">Honors</a>
+        <a href="education.html">Education</a>
       </nav>
       <div class="divider"></div>
     </header>
@@ -283,7 +258,6 @@
       <!-- 左邊：個人資訊 -->
       <aside class="profile-card">
         <div class="avatar-placeholder">
-          <!-- 之後可以換成你的照片 img -->
           Photo coming soon
         </div>
 
@@ -297,18 +271,15 @@
 
         <div class="profile-section-title">Contact</div>
         <ul class="profile-links">
-          <!-- 把 YOUR_EMAIL 換成你的信箱 -->
           <li>Email: <a href="mailto:charleswu0112@gmail.com">charleswu0112@gmail.com</a></li>
           <li>GitHub: <a href="https://github.com/charleswu0112-hub" target="_blank">charleswu0112-hub</a></li>
-          <!-- 把 YOUR_LINKEDIN_URL 換成你的 LinkedIn 連結 -->
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/hsuanyu-wu-646286381/edit/intro" target="_blank">View Profile</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/hsuanyu-wu-646286381" target="_blank">View Profile</a></li>
         </ul>
       </aside>
 
-            <!-- 右邊：內容區（分成四個分頁） -->
-      <section class="content">
-        <!-- Home 頁：About + Recent News -->
-        <section id="home" class="section content-panel active">
+      <!-- 右邊：Home 內容（About + News + Education） -->
+      <section>
+        <section class="section">
           <h2 class="section-title">About Me</h2>
           <div class="section-divider"></div>
           <p class="about-text">
@@ -323,55 +294,8 @@
             and I am particularly excited about frequency synthesis, phase noise
             optimization, and practical IC implementation.
           </p>
-
-          <section class="section" style="margin-top: 22px;">
-            <h2 class="section-title">Recent News</h2>
-            <div class="section-divider"></div>
-            <ul class="news-list">
-              <li class="news-item">
-                <span class="news-date">2025</span>
-                – Preparing applications for <b>MS ECE programs</b> with a focus on analog / RF IC design.
-              </li>
-              <li class="news-item">
-                <span class="news-date">2024–2025</span>
-                – Continuing self-study and project work on <b>VCOs and mixed-signal circuits</b>.
-              </li>
-            </ul>
-          </section>
-        </section>
-        
-        <!-- Honors 頁 -->
-        <section id="honors" class="section content-panel">
-          <h2 class="section-title">Honors</h2>
-          <div class="section-divider"></div>
-          <ul class="honor-list">
-            <li class="honor-item">
-              <span class="honor-date">2023–2024</span>
-              – <b>NSTC Research Grant Recipient</b>, VCO &amp; Chirp Signal Project.
-            </li>
-            <li class="honor-item">
-              <span class="honor-date">2024</span>
-              – <b>Outstanding Project Award</b> for VCO &amp; Chirp Signal Project.
-            </li>
-          </ul>
         </section>
 
-        <!-- Education 頁 -->
-        <section id="education" class="section content-panel">
-          <h2 class="section-title">Education</h2>
-          <div class="section-divider"></div>
-          <ul class="edu-list">
-            <li>
-              <span class="edu-degree">B.S. in Electronic Engineering</span><br />
-              National Yunlin University of Science and Technology (NYUST), Taiwan<br />
-              <span>Focusing on analog / RF / mixed-signal integrated circuits.</span>
-            </li>
-          </ul>
-        </section>
-      </section>
-
-
-        <!-- Recent News -->
         <section class="section">
           <h2 class="section-title">Recent News</h2>
           <div class="section-divider"></div>
@@ -387,68 +311,7 @@
           </ul>
         </section>
 
-        <!-- Experience -->
-        <section id="experience" class="section">
-          <h2 class="section-title">Experience</h2>
-          <div class="section-divider"></div>
-          <ul class="exp-list">
-            <li class="exp-item">
-              <div class="exp-role">
-                Research Assistant &amp; Team Leader
-              </div>
-              <div class="exp-title">
-                VCO &amp; Chirp Signal Project · Senior Design I &amp; Special Practicing Project II
-              </div>
-              <div class="exp-location">
-                Yunlin County, Taiwan · <span class="exp-date">Sep. 2023 – May 2024</span>
-              </div>
-              <ul class="exp-bullets">
-                <li>Awarded a research grant by the <b>Taiwan National Science and Technology Council (NSTC)</b>.</li>
-                <li>Designed a <b>2–5 GHz wide-tuning range LC VCO</b> using <b>UMC 0.18 μm CMOS</b> technology.</li>
-                <li>Implemented <b>chirp signal modulation</b> using a DC sweep-controlled active inductor.</li>
-                <li>Completed full chip layout in <b>Cadence Virtuoso</b>, followed by successful tape-out and PCB fabrication.</li>
-                <li>Verified frequency tuning (3–3.5 GHz) and power output stability (-40 to -50 dBm) under ramp-signal input.</li>
-              </ul>
-            </li>
-
-            <li class="exp-item" style="margin-top: 12px;">
-              <div class="exp-role">
-                Team Leader
-              </div>
-              <div class="exp-title">
-                IC Design Contest – Sponsored by Synopsys
-              </div>
-              <div class="exp-location">
-                Yunlin County, Taiwan · <span class="exp-date">Mar. 2023 – Apr. 2023</span>
-              </div>
-              <ul class="exp-bullets">
-                <li>Designed analog building blocks using <b>Cadence</b> and <b>Synopsys</b> EDA tools.</li>
-                <li>Optimized circuit performance under strict <b>area and power constraints</b> in a team-based setting.</li>
-                <li>Led the team to complete functional prototypes within limited time.</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Honors -->
-        <section id="honors" class="section">
-          <h2 class="section-title">Honors</h2>
-          <div class="section-divider"></div>
-          <ul class="honor-list">
-            <li class="honor-item">
-              <span class="honor-date">2023–2024</span>
-              – <b>NSTC Research Grant Recipient</b>, VCO &amp; Chirp Signal Project.
-            </li>
-            <li class="honor-item">
-              <span class="honor-date">2024</span>
-              – <b>Outstanding Project Award</b> for VCO &amp; Chirp Signal Project. <!-- 如果學校名稱確定，可以補上 -->
-            </li>
-            <!-- 未來有其他比賽、獎項可以在這裡一直往下加 -->0
-          </ul>
-        </section>
-
-        <!-- Education -->
-        <section id="education" class="section">
+        <section class="section">
           <h2 class="section-title">Education</h2>
           <div class="section-divider"></div>
           <ul class="edu-list">
@@ -459,7 +322,6 @@
             </li>
           </ul>
         </section>
-
       </section>
     </main>
 
@@ -467,34 +329,5 @@
       Last updated: November 2025
     </footer>
   </div>
-    <script>
-    // 簡單的分頁切換：點上方 nav，顯示對應區塊
-    const navLinks = document.querySelectorAll('.site-nav a');
-    const panels = document.querySelectorAll('.content-panel');
-
-    function showPanel(targetId) {
-      panels.forEach(panel => {
-        if (panel.id === targetId) {
-          panel.style.display = 'block';
-        } else {
-          panel.style.display = 'none';
-        }
-      });
-    }
-
-    // 初始：看網址有沒有 #hash，沒有就顯示 home
-    const initial = window.location.hash ? window.location.hash.substring(1) : 'home';
-    showPanel(initial);
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        showPanel(targetId);
-        // 更新網址 hash（不會重整頁面）
-        history.replaceState(null, '', '#' + targetId);
-      });
-    });
-  </script>
 </body>
 </html>
