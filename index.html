@@ -9,7 +9,7 @@
       --text-main: #111827;
       --text-sub: #4b5563;
       --border: #d1d5db;
-      --accent: #005b8f;
+      --accent: #00629b;
       --bg: #ffffff;
       --bg-muted: #f3f4f6;
     }
@@ -21,11 +21,11 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
         sans-serif;
       background: var(--bg);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a {
@@ -43,26 +43,28 @@
       padding: 28px 18px 60px;
     }
 
-    /* Header */
+    /* Header / Nav */
     .site-header {
       text-align: center;
       margin-bottom: 18px;
     }
 
     .site-title {
+      font-family: "Georgia", "Times New Roman", serif;
       font-size: 26px;
       font-weight: 600;
       letter-spacing: 0.03em;
+      margin-bottom: 4px;
     }
 
     .site-nav {
-      margin-top: 10px;
       font-size: 14px;
       color: var(--text-sub);
+      margin-bottom: 10px;
     }
 
     .site-nav a {
-      margin: 0 10px;
+      margin: 0 12px;
       position: relative;
       padding-bottom: 2px;
     }
@@ -84,22 +86,22 @@
 
     .divider {
       border-top: 1px solid var(--border);
-      margin-top: 16px;
+      margin-top: 10px;
     }
 
     /* Layout */
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr);
-      gap: 32px;
-      margin-top: 26px;
+      gap: 36px;
+      margin-top: 28px;
     }
 
     /* Left column */
     .profile-card {
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 18px 18px 16px;
+      padding: 20px 18px 18px;
       background: var(--bg);
     }
 
@@ -114,10 +116,11 @@
       justify-content: center;
       font-size: 13px;
       color: var(--text-sub);
-      margin: 0 auto 14px;
+      margin: 0 auto 16px;
     }
 
     .profile-name {
+      font-family: "Georgia", "Times New Roman", serif;
       font-weight: 600;
       text-align: center;
       margin-bottom: 8px;
@@ -145,10 +148,10 @@
     .profile-section-title {
       font-size: 13px;
       font-weight: 600;
-      margin-top: 14px;
+      margin-top: 16px;
       margin-bottom: 6px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 2px;
+      padding-bottom: 3px;
     }
 
     .profile-links {
@@ -160,12 +163,13 @@
       margin-bottom: 4px;
     }
 
-    /* Right column */
+    /* Right column / sections */
     .section {
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .section-title {
+      font-family: "Georgia", "Times New Roman", serif;
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 4px;
@@ -186,20 +190,26 @@
     }
 
     .news-list,
-    .edu-list {
+    .edu-list,
+    .exp-list,
+    .honor-list {
       list-style: none;
       font-size: 14px;
       color: var(--text-sub);
       padding-left: 0;
     }
 
-    .news-item {
-      margin-bottom: 6px;
+    .news-item,
+    .exp-item,
+    .honor-item {
+      margin-bottom: 8px;
     }
 
-    .news-date {
-      margin-right: 4px;
+    .news-date,
+    .exp-date,
+    .honor-date {
       font-weight: 600;
+      margin-right: 4px;
     }
 
     .edu-list li {
@@ -211,8 +221,27 @@
       color: #111827;
     }
 
+    .exp-role {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .exp-title {
+      font-style: italic;
+    }
+
+    .exp-location {
+      color: var(--text-sub);
+    }
+
+    .exp-bullets {
+      margin-top: 3px;
+      margin-left: 16px;
+      list-style: disc;
+    }
+
     .footer {
-      margin-top: 26px;
+      margin-top: 30px;
       font-size: 12px;
       color: var(--text-sub);
       border-top: 1px solid var(--border);
@@ -223,7 +252,7 @@
     @media (max-width: 800px) {
       .layout {
         grid-template-columns: minmax(0, 1fr);
-        gap: 18px;
+        gap: 22px;
       }
       .profile-card {
         max-width: 360px;
@@ -241,51 +270,50 @@
     <header class="site-header">
       <h1 class="site-title">Hsuan-Yu (Charles) Wu</h1>
       <nav class="site-nav">
-        <a href="#about">Home</a>
-        <a href="#news">News</a>
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#honors">Honors</a>
         <a href="#education">Education</a>
       </nav>
       <div class="divider"></div>
     </header>
 
     <main class="layout">
-      <!-- Left column -->
+      <!-- 左邊：個人資訊 -->
       <aside class="profile-card">
         <div class="avatar-placeholder">
-          <!-- 之後可以換成你的照片 img 標籤 -->
+          <!-- 之後可以換成你的照片 img -->
           Photo coming soon
         </div>
 
         <div class="profile-name">Hsuan-Yu (Charles) Wu</div>
 
         <ul class="profile-meta">
-          <!-- 學校之後如果想加，可以把下面註解改掉 -->
-          <!-- <li><span class="icon">🎓</span><span>National XXX University</span></li> -->
+          <li><span class="icon">🎓</span><span>Department of Electronic Engineering, NYUST</span></li>
           <li><span class="icon">💡</span><span>Analog / RF / Mixed-Signal IC Design</span></li>
           <li><span class="icon">🎯</span><span>Applying for MS in Electrical &amp; Computer Engineering (MS ECE)</span></li>
-          <!-- <li><span class="icon">📍</span><span>Taiwan</span></li> -->
         </ul>
 
         <div class="profile-section-title">Contact</div>
         <ul class="profile-links">
-          <!-- 這裡 email 先留空白，等你想放再改 -->
-          <li>Email: <a href="mailto:charles123@gmail.com">charles123@gmail.com</a></li>
+          <!-- 把 YOUR_EMAIL 換成你的信箱 -->
+          <li>Email: <a href="mailto:charleswu0112@gmail.com">charleswu0112@gmail.com</a></li>
           <li>GitHub: <a href="https://github.com/charleswu0112-hub" target="_blank">charleswu0112-hub</a></li>
-          <!-- 之後如果有 LinkedIn 可以加在這裡 -->
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/hsuanyu-wu-646286381/" target="_blank">View Profile</a></li>
+          <!-- 把 YOUR_LINKEDIN_URL 換成你的 LinkedIn 連結 -->
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/hsuanyu-wu-646286381/edit/intro" target="_blank">View Profile</a></li>
         </ul>
       </aside>
 
-      <!-- Right column -->
-      <section>
+      <!-- 右邊：內容區 -->
+      <section id="home">
         <!-- About -->
-        <section id="about" class="section">
+        <section class="section">
           <h2 class="section-title">About Me</h2>
           <div class="section-divider"></div>
           <p class="about-text">
             Hello! 👋 I am <b>Hsuan-Yu (Charles) Wu</b>. I am currently preparing applications
             for <b>Master's programs in Electrical and Computer Engineering (MS ECE)</b>.
-            My primary interests lie in <b>Analog and RF Integrated Circuit Design</b>,
+            My primary interests lie in <b>analog and RF integrated circuit design</b>,
             especially <b>voltage-controlled oscillators (VCOs)</b> and related
             mixed-signal circuits.
           </p>
@@ -297,7 +325,7 @@
         </section>
 
         <!-- Recent News -->
-        <section id="news" class="section">
+        <section class="section">
           <h2 class="section-title">Recent News</h2>
           <div class="section-divider"></div>
           <ul class="news-list">
@@ -307,9 +335,68 @@
             </li>
             <li class="news-item">
               <span class="news-date">2024–2025</span>
-              – Continuing self-study and projects related to <b>VCOs and mixed-signal circuits</b>.
+              – Continuing self-study and project work on <b>VCOs and mixed-signal circuits</b>.
             </li>
-            <!-- 之後有比賽、paper、實習，可以在這裡一直往下加 -->1
+          </ul>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section">
+          <h2 class="section-title">Experience</h2>
+          <div class="section-divider"></div>
+          <ul class="exp-list">
+            <li class="exp-item">
+              <div class="exp-role">
+                Research Assistant &amp; Team Leader
+              </div>
+              <div class="exp-title">
+                VCO &amp; Chirp Signal Project · Senior Design I &amp; Special Practicing Project II
+              </div>
+              <div class="exp-location">
+                Yunlin County, Taiwan · <span class="exp-date">Sep. 2023 – May 2024</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>Awarded a research grant by the <b>Taiwan National Science and Technology Council (NSTC)</b>.</li>
+                <li>Designed a <b>2–5 GHz wide-tuning range LC VCO</b> using <b>UMC 0.18 μm CMOS</b> technology.</li>
+                <li>Implemented <b>chirp signal modulation</b> using a DC sweep-controlled active inductor.</li>
+                <li>Completed full chip layout in <b>Cadence Virtuoso</b>, followed by successful tape-out and PCB fabrication.</li>
+                <li>Verified frequency tuning (3–3.5 GHz) and power output stability (-40 to -50 dBm) under ramp-signal input.</li>
+              </ul>
+            </li>
+
+            <li class="exp-item" style="margin-top: 12px;">
+              <div class="exp-role">
+                Team Leader
+              </div>
+              <div class="exp-title">
+                IC Design Contest – Sponsored by Synopsys
+              </div>
+              <div class="exp-location">
+                Yunlin County, Taiwan · <span class="exp-date">Mar. 2023 – Apr. 2023</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>Designed analog building blocks using <b>Cadence</b> and <b>Synopsys</b> EDA tools.</li>
+                <li>Optimized circuit performance under strict <b>area and power constraints</b> in a team-based setting.</li>
+                <li>Led the team to complete functional prototypes within limited time.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Honors -->
+        <section id="honors" class="section">
+          <h2 class="section-title">Honors</h2>
+          <div class="section-divider"></div>
+          <ul class="honor-list">
+            <li class="honor-item">
+              <span class="honor-date">2023–2024</span>
+              – <b>NSTC Research Grant Recipient</b>, VCO &amp; Chirp Signal Project.
+            </li>
+            <li class="honor-item">
+              <span class="honor-date">2024</span>
+              – <b>Outstanding Project Award</b> for VCO &amp; Chirp Signal Project. <!-- 如果學校名稱確定，可以補上 -->
+            </li>
+            <!-- 未來有其他比賽、獎項可以在這裡一直往下加 -->
           </ul>
         </section>
 
@@ -319,17 +406,18 @@
           <div class="section-divider"></div>
           <ul class="edu-list">
             <li>
-              <span class="edu-degree">B.S. in Electrical Engineering (in progress)</span><br />
+              <span class="edu-degree">B.S. in Electronic Engineering</span><br />
+              National Yunlin University of Science and Technology (NYUST), Taiwan<br />
               <span>Focusing on analog / RF / mixed-signal integrated circuits.</span>
             </li>
-            <!-- 如果你想寫更詳細的學校名稱或第二專長，可以在這裡加 -->
           </ul>
         </section>
+
       </section>
     </main>
 
     <footer class="footer">
-      Last updated: <span id="last-updated">November 2025</span>
+      Last updated: November 2025
     </footer>
   </div>
 </body>
