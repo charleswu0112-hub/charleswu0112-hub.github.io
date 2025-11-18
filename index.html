@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Charles Wu | Portfolio</title>
+  <title>Hsuan-Yu (Charles) Wu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* 全局樣式 */
     :root {
-      --bg: #050816;
-      --bg-soft: #0f172a;
-      --card: #111827;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.15);
-      --text-main: #e5e7eb;
-      --text-sub: #9ca3af;
-      --border-soft: rgba(148,163,184,0.35);
-      --radius-lg: 18px;
-      --radius-xl: 28px;
-      --shadow-soft: 0 18px 45px rgba(15,23,42,0.8);
+      --text-main: #111827;
+      --text-sub: #4b5563;
+      --border: #d1d5db;
+      --accent: #005b8f;
+      --bg: #ffffff;
+      --bg-muted: #f3f4f6;
     }
 
     * {
@@ -29,670 +23,314 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
+      background: var(--bg);
       color: var(--text-main);
-      min-height: 100vh;
+      line-height: 1.6;
     }
 
     a {
-      color: inherit;
+      color: var(--accent);
       text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .page {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 18px 80px;
+      padding: 28px 18px 60px;
     }
 
-    /* 頂部導覽列 */
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 32px;
+    /* Header */
+    .site-header {
+      text-align: center;
+      margin-bottom: 18px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: radial-gradient(circle at 30% 20%, #f97316, #e11d48);
-      box-shadow: 0 0 22px rgba(248, 113, 113, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: #f9fafb;
-    }
-
-    .logo-text-main {
+    .site-title {
+      font-size: 26px;
       font-weight: 600;
       letter-spacing: 0.03em;
-      font-size: 16px;
     }
 
-    .logo-text-sub {
-      font-size: 12px;
-      color: var(--text-sub);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
+    .site-nav {
+      margin-top: 10px;
       font-size: 14px;
       color: var(--text-sub);
     }
 
-    .nav-links a {
+    .site-nav a {
+      margin: 0 10px;
       position: relative;
       padding-bottom: 2px;
     }
 
-    .nav-links a::after {
+    .site-nav a::after {
       content: "";
       position: absolute;
       left: 0;
       bottom: 0;
       width: 0;
-      height: 2px;
-      background: linear-gradient(to right, #38bdf8, #a855f7);
-      transition: width 0.22s ease-out;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
     }
 
-    .nav-links a:hover::after {
+    .site-nav a:hover::after {
       width: 100%;
     }
 
-    /* Hero 區塊 */
-    .hero {
+    .divider {
+      border-top: 1px solid var(--border);
+      margin-top: 16px;
+    }
+
+    /* Layout */
+    .layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr);
       gap: 32px;
-      align-items: center;
-      margin-bottom: 48px;
+      margin-top: 26px;
     }
 
-    .hero-text-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid rgba(56,189,248,0.45);
-      margin-bottom: 14px;
+    /* Left column */
+    .profile-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 18px 16px;
+      background: var(--bg);
     }
 
-    .hero-title {
-      font-size: clamp(32px, 4vw, 40px);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 10px;
-    }
-
-    .hero-title span {
-      background: linear-gradient(to right, #38bdf8, #a855f7);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-sub);
-      line-height: 1.7;
-      max-width: 470px;
-      margin-bottom: 20px;
-    }
-
-    .hero-meta {
+    .avatar-placeholder {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 24px;
-    }
-
-    .hero-meta span {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.85);
-      border: 1px solid var(--border-soft);
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary,
-    .btn-ghost {
+      align-items: center;
+      justify-content: center;
       font-size: 13px;
-      padding: 9px 15px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.18s ease-out;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #38bdf8, #a855f7);
-      color: #0b1120;
-      font-weight: 600;
-      box-shadow: 0 12px 30px rgba(56,189,248,0.55);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 38px rgba(56,189,248,0.75);
-    }
-
-    .btn-ghost {
-      border-color: var(--border-soft);
-      background: rgba(15,23,42,0.9);
-      color: var(--text-main);
-    }
-
-    .btn-ghost:hover {
-      border-color: #4b5563;
-      background: rgba(31,41,55,0.9);
-    }
-
-    .btn-primary-icon {
-      font-size: 14px;
-    }
-
-    /* Hero 卡片（右邊） */
-    .hero-card {
-      border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top left, #1f2937 0, #020617 50%, #000 100%);
-      border: 1px solid rgba(148,163,184,0.55);
-      box-shadow: var(--shadow-soft);
-      padding: 20px 20px 18px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card-tag {
-      font-size: 11px;
       color: var(--text-sub);
+      margin: 0 auto 14px;
+    }
+
+    .profile-name {
+      font-weight: 600;
+      text-align: center;
       margin-bottom: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
-    .hero-card-title {
-      font-size: 16px;
-      font-weight: 600;
+    .profile-meta {
+      font-size: 13px;
+      color: var(--text-sub);
+      list-style: none;
+    }
+
+    .profile-meta li {
       margin-bottom: 6px;
-    }
-
-    .hero-card-desc {
-      font-size: 12px;
-      color: var(--text-sub);
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .hero-card-skills {
       display: flex;
-      flex-wrap: wrap;
+      align-items: baseline;
       gap: 6px;
-      margin-bottom: 14px;
     }
 
-    .pill {
-      font-size: 11px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: rgba(15,23,42,0.9);
-      color: var(--text-sub);
+    .profile-meta span.icon {
+      font-size: 14px;
+      width: 16px;
+      text-align: center;
     }
 
-    .hero-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--text-sub);
+    .profile-section-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
     }
 
-    .hero-card-footer a {
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+    .profile-links {
+      font-size: 13px;
+      list-style: none;
     }
 
-    .hero-orbit {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+    .profile-links li {
+      margin-bottom: 4px;
     }
 
-    .hero-orbit-circle {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 999px;
-      border: 1px dashed rgba(148,163,184,0.45);
-      top: 45%;
-      left: 52%;
-      transform: translate(-50%, -50%);
-    }
-
-    .hero-orbit-dot {
-      position: absolute;
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: #fbbf24;
-      top: 10px;
-      right: 24px;
-      box-shadow: 0 0 14px rgba(250, 204, 21, 0.7);
-    }
-
-    /* Section 標題 */
+    /* Right column */
     .section {
-      margin-bottom: 46px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
 
     .section-title {
       font-size: 18px;
       font-weight: 600;
-    }
-
-    .section-subtitle {
-      font-size: 12px;
-      color: var(--text-sub);
-    }
-
-    /* Projects 卡片 */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
-
-    .project-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 14px 14px 12px;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.85);
-    }
-
-    .project-thumb {
-      border-radius: 12px;
-      background: linear-gradient(135deg, #0ea5e9, #a855f7);
-      height: 120px;
-      margin-bottom: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-thumb-inner {
-      position: absolute;
-      inset: 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(248,250,252,0.45);
-      background: radial-gradient(circle at top, rgba(15,23,42,0.9), #020617);
-    }
-
-    .project-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 4px;
     }
 
-    .project-title {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .project-tag {
-      font-size: 11px;
-      color: var(--accent);
-      background: rgba(56,189,248,0.14);
-      padding: 2px 7px;
-      border-radius: 999px;
-      border: 1px solid rgba(56,189,248,0.45);
-    }
-
-    .project-desc {
-      font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 6px;
-      line-height: 1.6;
-    }
-
-    .project-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--text-sub);
-    }
-
-    .project-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .project-links a {
-      font-size: 11px;
-      color: var(--accent);
-    }
-
-    /* About / Contact */
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 20px;
+    .section-divider {
+      border-top: 2px solid #111827;
+      margin-bottom: 10px;
     }
 
     .about-text {
-      font-size: 13px;
-      color: var(--text-sub);
-      line-height: 1.7;
-    }
-
-    .skills-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .contact-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 14px 14px 10px;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-sub);
     }
 
-    .contact-row {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 6px;
-      font-size: 12px;
+    .about-text b {
+      color: #111827;
     }
 
-    .contact-label {
-      color: #6b7280;
+    .news-list,
+    .edu-list {
+      list-style: none;
+      font-size: 14px;
+      color: var(--text-sub);
+      padding-left: 0;
+    }
+
+    .news-item {
+      margin-bottom: 6px;
+    }
+
+    .news-date {
+      margin-right: 4px;
+      font-weight: 600;
+    }
+
+    .edu-list li {
+      margin-bottom: 4px;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      color: #111827;
     }
 
     .footer {
-      margin-top: 40px;
-      font-size: 11px;
+      margin-top: 26px;
+      font-size: 12px;
       color: var(--text-sub);
-      text-align: center;
-      border-top: 1px solid rgba(31,41,55,0.9);
-      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      text-align: right;
     }
 
-    /* RWD */
-    @media (max-width: 860px) {
-      .hero {
+    @media (max-width: 800px) {
+      .layout {
         grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
       }
-      .hero-card {
-        order: -1;
+      .profile-card {
+        max-width: 360px;
+        margin: 0 auto;
       }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .page {
-        padding-inline: 16px;
-      }
-      .two-column {
-        grid-template-columns: minmax(0, 1fr);
+      .footer {
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- 導覽列 -->
-    <header class="nav">
-      <div class="logo">
-        <div class="logo-icon">C</div>
-        <div>
-          <div class="logo-text-main">Charles Wu</div>
-          <div class="logo-text-sub">Developer / Creator</div>
-        </div>
-      </div>
-      <nav class="nav-links">
-        <a href="#projects">作品</a>
-        <a href="#about">關於我</a>
-        <a href="#contact">聯絡</a>
+    <!-- Header -->
+    <header class="site-header">
+      <h1 class="site-title">Hsuan-Yu (Charles) Wu</h1>
+      <nav class="site-nav">
+        <a href="#about">Home</a>
+        <a href="#news">News</a>
+        <a href="#education">Education</a>
       </nav>
+      <div class="divider"></div>
     </header>
 
-    <!-- Hero 區塊 -->
-    <section class="hero">
-      <div>
-        <div class="hero-text-eyebrow">
-          <span>✨ GitHub Pages</span>
-          <span>Portfolio Beta</span>
-        </div>
-        <h1 class="hero-title">
-          嗨，我是 <span>Charles</span><br />正在把 Side Projects 做成作品集。
-        </h1>
-        <p class="hero-subtitle">
-          喜歡把點子變成實際可以體驗的東西。這個網站會慢慢整理我的 GitHub 專案、
-          練習作品與正在進行中的小實驗。
-        </p>
-        <div class="hero-meta">
-          <span>💻 GitHub：<strong>charleswu0112-hub</strong></span>
-          <span>🛠 Side projects &amp; learning</span>
-        </div>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#projects">
-            看我的作品
-            <span class="btn-primary-icon">↗</span>
-          </a>
-          <a class="btn-ghost" href="https://github.com/charleswu0112-hub" target="_blank">
-            前往 GitHub
-          </a>
-        </div>
-      </div>
-
-      <aside class="hero-card">
-        <div class="hero-card-tag">
-          <span>Now Playing · Personal Dev Log</span>
-          <span>v0.1</span>
-        </div>
-        <h2 class="hero-card-title">Side Project 狀態板</h2>
-        <p class="hero-card-desc">
-          正在學習如何把 GitHub、作品集與個人品牌整合在一起。
-          之後會把更多專案、截圖與心得放上來。
-        </p>
-        <div class="hero-card-skills">
-          <span class="pill">HTML / CSS</span>
-          <span class="pill">GitHub Pages</span>
-          <span class="pill">Front-end Practice</span>
-        </div>
-        <div class="hero-card-footer">
-          <span>下一步：加入更多作品與圖片</span>
-          <a href="#about">了解我在做什麼 →</a>
+    <main class="layout">
+      <!-- Left column -->
+      <aside class="profile-card">
+        <div class="avatar-placeholder">
+          <!-- 之後可以換成你的照片 img 標籤 -->
+          Photo coming soon
         </div>
 
-        <div class="hero-orbit">
-          <div class="hero-orbit-circle"></div>
-          <div class="hero-orbit-dot"></div>
-        </div>
+        <div class="profile-name">Hsuan-Yu (Charles) Wu</div>
+
+        <ul class="profile-meta">
+          <!-- 學校之後如果想加，可以把下面註解改掉 -->
+          <!-- <li><span class="icon">🎓</span><span>National XXX University</span></li> -->
+          <li><span class="icon">💡</span><span>Analog / RF / Mixed-Signal IC Design</span></li>
+          <li><span class="icon">🎯</span><span>Applying for MS in Electrical &amp; Computer Engineering (MS ECE)</span></li>
+          <!-- <li><span class="icon">📍</span><span>Taiwan</span></li> -->
+        </ul>
+
+        <div class="profile-section-title">Contact</div>
+        <ul class="profile-links">
+          <!-- 這裡 email 先留空白，等你想放再改 -->
+          <li>Email: <a href="mailto:charles123@gmail.com">charles123@gmail.com</a></li>
+          <li>GitHub: <a href="https://github.com/charleswu0112-hub" target="_blank">charleswu0112-hub</a></li>
+          <!-- 之後如果有 LinkedIn 可以加在這裡 -->
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/hsuanyu-wu-646286381/" target="_blank">View Profile</a></li>
+        </ul>
       </aside>
-    </section>
 
-    <!-- Projects 區塊 -->
-    <section id="projects" class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">作品 / Projects</h2>
-          <p class="section-subtitle">
-            先放幾個代表性的 repo，之後可以再慢慢補上截圖與細節。
+      <!-- Right column -->
+      <section>
+        <!-- About -->
+        <section id="about" class="section">
+          <h2 class="section-title">About Me</h2>
+          <div class="section-divider"></div>
+          <p class="about-text">
+            Hello! 👋 I am <b>Hsuan-Yu (Charles) Wu</b>. I am currently preparing applications
+            for <b>Master's programs in Electrical and Computer Engineering (MS ECE)</b>.
+            My primary interests lie in <b>Analog and RF Integrated Circuit Design</b>,
+            especially <b>voltage-controlled oscillators (VCOs)</b> and related
+            mixed-signal circuits.
           </p>
-        </div>
-        <a class="section-subtitle" href="https://github.com/charleswu0112-hub" target="_blank">
-          查看全部 GitHub → 
-        </a>
-      </div>
+          <p class="about-text" style="margin-top: 8px;">
+            I enjoy building circuits that bridge theory and real-world performance,
+            and I am particularly excited about frequency synthesis, phase noise
+            optimization, and practical IC implementation.
+          </p>
+        </section>
 
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <div class="project-thumb-inner"></div>
-          </div>
-          <div class="project-title-row">
-            <h3 class="project-title">範例專案名稱</h3>
-            <span class="project-tag">Web / Practice</span>
-          </div>
-          <p class="project-desc">
-            在這裡簡短描述這個專案在做什麼、使用了哪些技術，
-          </p>
-          <div class="project-meta">
-            <span>Stack：HTML · CSS · JS</span>
-            <div class="project-links">
-              <a href="https://github.com/charleswu0112-hub" target="_blank">GitHub</a>
-              <a href="#" target="_blank">Live Demo</a>
-            </div>
-          </div>
-        </article>
+        <!-- Recent News -->
+        <section id="news" class="section">
+          <h2 class="section-title">Recent News</h2>
+          <div class="section-divider"></div>
+          <ul class="news-list">
+            <li class="news-item">
+              <span class="news-date">2025</span>
+              – Preparing applications for <b>MS ECE programs</b> with a focus on analog / RF IC design.
+            </li>
+            <li class="news-item">
+              <span class="news-date">2024–2025</span>
+              – Continuing self-study and projects related to <b>VCOs and mixed-signal circuits</b>.
+            </li>
+            <!-- 之後有比賽、paper、實習，可以在這裡一直往下加 -->
+          </ul>
+        </section>
 
-        <!-- Project 2 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <div class="project-thumb-inner"></div>
-          </div>
-          <div class="project-title-row">
-            <h3 class="project-title">第二個作品</h3>
-            <span class="project-tag">Tool / Script</span>
-          </div>
-          <p class="project-desc">
-            可以是你寫的小工具、練習用腳本，或是用來解決自己生活中某個小麻煩的專案。
-          </p>
-          <div class="project-meta">
-            <span>Stack：Python · CLI</span>
-            <div class="project-links">
-              <a href="https://github.com/charleswu0112-hub" target="_blank">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <div class="project-thumb-inner"></div>
-          </div>
-          <div class="project-title-row">
-            <h3 class="project-title">正在開發中的實驗</h3>
-            <span class="project-tag">WIP</span>
-          </div>
-          <p class="project-desc">
-            把你還在做的東西也放上來，當作 Dev Log，讓別人看到你在成長的過程。
-          </p>
-          <div class="project-meta">
-            <span>更新：持續中</span>
-            <div class="project-links">
-              <a href="https://github.com/charleswu0112-hub" target="_blank">GitHub</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- About / Contact -->
-    <section id="about" class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">關於我</h2>
-          <p class="section-subtitle">簡短介紹一下自己與目前在做的事。</p>
-        </div>
-      </div>
-
-      <div class="two-column">
-        <div class="about-text">
-          <p>
-            我是 Charles，目前正在透過 GitHub 累積各種小專案與練習。
-            喜歡拆解問題、做實驗、把想法變成可以實際操作的東西。
-          </p>
-          <p style="margin-top: 10px;">
-            這個網站會慢慢整理：我做過的 side projects、學習筆記，以及一些覺得有趣的嘗試。
-            也歡迎你直接到 GitHub 看原始碼。
-          </p>
-          <div class="skills-tags">
-            <span class="pill">Side Project Lover</span>
-            <span class="pill">Always Learning</span>
-            <span class="pill">Open to Collaboration</span>
-          </div>
-        </div>
-
-        <aside id="contact" class="contact-card">
-          <div style="font-size: 13px; margin-bottom: 4px; color: #e5e7eb;">
-            想跟我聯絡？
-          </div>
-          <p>
-            如果你對我的專案有任何想法、想聊天或合作，都可以透過下方管道找到我。
-          </p>
-          <div class="contact-row" style="margin-top: 10px;">
-            <span class="contact-label">GitHub</span>
-            <a href="https://github.com/charleswu0112-hub" target="_blank">
-              @charleswu0112-hub
-            </a>
-          </div>
-          <!-- 之後如果你願意公開 email，可以把註解打開 -->
-          <!--
-          <div class="contact-row">
-            <span class="contact-label">Email</span>
-            <a href="mailto:youremail@example.com">youremail@example.com</a>
-          </div>
-          -->
-        </aside>
-      </div>
-    </section>
+        <!-- Education -->
+        <section id="education" class="section">
+          <h2 class="section-title">Education</h2>
+          <div class="section-divider"></div>
+          <ul class="edu-list">
+            <li>
+              <span class="edu-degree">B.S. in Electrical Engineering (in progress)</span><br />
+              <span>Focusing on analog / RF / mixed-signal integrated circuits.</span>
+            </li>
+            <!-- 如果你想寫更詳細的學校名稱或第二專長，可以在這裡加 -->
+          </ul>
+        </section>
+      </section>
+    </main>
 
     <footer class="footer">
-      © <span id="year"></span> Charles Wu · Built with GitHub Pages
+      Last updated: <span id="last-updated">November 2025</span>
     </footer>
   </div>
-
-  <script>
-    // 動態顯示年份
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
