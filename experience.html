@@ -8,7 +8,239 @@
   <!-- 你可以把這整段 head 換成和 index.html 一樣的 style，那版就行 -->
   <!-- 這裡我假設你直接把 index.html 的 <style> 那段原封不動貼過來 -->
   <style>
-    /* 建議直接複製 index.html 裡的整段 <style> */
+    :root {
+      --text-main: #111827;
+      --text-sub: #4b5563;
+      --border: #d1d5db;
+      --accent: #00629b;
+      --bg: #ffffff;
+      --bg-muted: #f3f4f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    /* Header / Nav */
+    .site-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .site-title {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+
+    .site-nav {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+    }
+
+    .site-nav a {
+      margin: 0 12px;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .site-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .site-nav a:hover::after {
+      width: 100%;
+    }
+
+    .divider {
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    /* Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr);
+      gap: 36px;
+      margin-top: 28px;
+    }
+
+    /* Left column */
+    .profile-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 18px 18px;
+      background: var(--bg);
+    }
+
+    .avatar-placeholder {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin: 0 auto 16px;
+    }
+
+    .profile-name {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .profile-meta {
+      font-size: 13px;
+      color: var(--text-sub);
+      list-style: none;
+    }
+
+    .profile-meta li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .profile-meta span.icon {
+      font-size: 14px;
+      width: 16px;
+      text-align: center;
+    }
+
+    .profile-section-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3px;
+    }
+
+    .profile-links {
+      font-size: 13px;
+      list-style: none;
+    }
+
+    .profile-links li {
+      margin-bottom: 4px;
+    }
+
+    /* Right column / sections */
+    .section {
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .section-divider {
+      border-top: 2px solid #111827;
+      margin-bottom: 10px;
+    }
+
+    .about-text {
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+
+    .about-text b {
+      color: #111827;
+    }
+
+    .news-list,
+    .edu-list {
+      list-style: none;
+      font-size: 14px;
+      color: var(--text-sub);
+      padding-left: 0;
+    }
+
+    .news-item {
+      margin-bottom: 8px;
+    }
+
+    .news-date {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .edu-list li {
+      margin-bottom: 4px;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      text-align: right;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+      }
+      .profile-card {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .footer {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
