@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Awards | Hsuan-Yu (Charles) Wu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===（保持與 index.html 完全一致的 CSS）=== -->
+  <style>
+    :root {
+      --text-main: #111827;
+      --text-sub: #4b5563;
+      --border: #d1d5db;
+      --accent: #00629b;
+      --bg: #ffffff;
+      --bg-muted: #f3f4f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    .site-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .site-title {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+
+    .site-nav {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+    }
+
+    .site-nav a {
+      margin: 0 12px;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .site-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .site-nav a:hover::after {
+      width: 100%;
+    }
+
+    .divider {
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 2fr);
+      gap: 36px;
+      margin-top: 28px;
+    }
+
+    .profile-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 18px 18px;
+      background: var(--bg);
+    }
+
+    .avatar-placeholder {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      background: var(--bg-muted);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin: 0 auto 16px;
+    }
+
+    .profile-name {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .profile-meta {
+      font-size: 13px;
+      color: var(--text-sub);
+      list-style: none;
+    }
+
+    .profile-meta li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .profile-meta span.icon {
+      font-size: 14px;
+      width: 16px;
+      text-align: center;
+    }
+
+    .profile-section-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3px;
+    }
+
+    .profile-links {
+      font-size: 13px;
+      list-style: none;
+    }
+
+    .profile-links li {
+      margin-bottom: 4px;
+    }
+
+    .section {
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .section-divider {
+      border-top: 2px solid #111827;
+      margin-bottom: 10px;
+    }
+
+    .award-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 14px;
+      color: var(--text-sub);
+    }
+
+    .award-item {
+      margin-bottom: 12px;
+    }
+
+    .award-date {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      text-align: right;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .profile-card {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .footer {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- TOP NAV -->
+    <header class="site-header">
+      <h1 class="site-title">Hsuan-Yu (Charles) Wu</h1>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="awards.html">Awards</a>
+        <a href="education.html">Education</a>
+      </nav>
+      <div class="divider"></div>
+    </header>
+
+    <main class="layout">
+
+      <!-- LEFT PROFILE CARD -->
+      <aside class="profile-card">
+        <div class="avatar-placeholder">Photo coming soon</div>
+
+        <div class="profile-name">Hsuan-Yu (Charles) Wu</div>
+
+        <ul class="profile-meta">
+          <li><span class="icon">🎓</span>Department of Electronic Engineering, NYUST</li>
+          <li><span class="icon">💡</span>Analog / RF / Mixed-Signal IC Design</li>
+          <li><span class="icon">🎯</span>Applying for MS ECE</li>
+        </ul>
+
+        <div class="profile-section-title">Contact</div>
+        <ul class="profile-links">
+          <li>Email: <a href="mailto:charleswu0112@gmail.com">charleswu0112@gmail.com</a></li>
+          <li>GitHub: <a href="https://github.com/charleswu0112-hub" target="_blank">charleswu0112-hub</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/hsuanyu-wu-646286381" target="_blank">View Profile</a></li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <section>
+        <section class="section">
+          <h2 class="section-title">Awards</h2>
+          <div class="section-divider"></div>
+
+          <ul class="award-list">
+
+            <li class="award-item">
+              <span class="award-date">2023–2024</span> — 
+              <b>NSTC Research Grant Recipient</b>, VCO &amp; Chirp Signal Project.
+            </li>
+
+            <li class="award-item">
+              <span class="award-date">2024</span> —
+              <b>Outstanding Project Award</b>, VCO &amp; Chirp Signal Project.
+            </li>
+
+          </ul>
+        </section>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      Last updated: November 2025
+    </footer>
+  </div>
+</body>
+</html>
