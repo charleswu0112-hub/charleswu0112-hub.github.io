@@ -183,4 +183,136 @@
 
     .about-text {
       font-size: 15px;
-      color: var(--
+      color: var(--text-sub);
+    }
+
+    .about-text b {
+      color: #111827;
+    }
+
+    .news-list {
+      list-style: none;
+      font-size: 14px;
+      color: var(--text-sub);
+      padding-left: 0;
+    }
+
+    .news-item {
+      margin-bottom: 12px;
+    }
+
+    .news-date {
+      font-weight: 600;
+      margin-right: 4px;
+      color: #111827;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      text-align: right;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+      }
+      .profile-card {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .footer {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="site-header">
+      <h1 class="site-title">Hsuan-Yu (Charles) Wu</h1>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="awards.html">Awards</a>
+        <a href="future.html">Education</a>
+      </nav>
+      <div class="divider"></div>
+    </header>
+
+    <main class="layout">
+      <!-- 左邊：個人資訊 -->
+      <aside class="profile-card">
+        <div class="avatar-placeholder">
+          Photo coming soon
+        </div>
+
+        <div class="profile-name">Hsuan-Yu (Charles) Wu</div>
+
+        <ul class="profile-meta">
+          <li><span class="icon">🎓</span><span>Department of Electronic Engineering, NYUST</span></li>
+          <li><span class="icon">💡</span><span>Analog / RF / Mixed-Signal IC Design</span></li>
+          <li><span class="icon">🎯</span><span>Applying for MS in Electrical &amp; Computer Engineering (MS ECE)</span></li>
+        </ul>
+
+        <div class="profile-section-title">Contact</div>
+        <ul class="profile-links">
+          <li>Email: <a href="mailto:charleswu0112@gmail.com">charleswu0112@gmail.com</a></li>
+          <li>GitHub: <a href="https://github.com/charleswu0112-hub" target="_blank">charleswu0112-hub</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/hsuanyu-wu-646286381" target="_blank">View Profile</a></li>
+        </ul>
+      </aside>
+
+      <!-- 右邊：Awards 內容 -->
+      <section>
+        <section class="section">
+          <h2 class="section-title">Awards &amp; Honors</h2>
+          <div class="section-divider"></div>
+
+          <ul class="news-list">
+            <!-- NSTC Research Grant -->
+            <li class="news-item">
+              <span class="news-date">2023–2024</span>
+              <b>NSTC Undergraduate Research Grant</b>, VCO &amp; Chirp Signal Project<br />
+              National Science and Technology Council (NSTC), Taiwan<br />
+              Led a project on a 2–5&nbsp;GHz wide-tuning LC VCO using UMC 0.18&nbsp;µm CMOS technology, including full chip layout, tape-out, PCB fabrication, and post-silicon verification.
+            </li>
+
+            <!-- IC Design Contest -->
+            <li class="news-item">
+              <span class="news-date">2023</span>
+              <b>IC Design Contest – Team Leader</b> (Synopsys-sponsored competition)<br />
+              National Yunlin University of Science and Technology (NYUST), Taiwan<br />
+              Led a team to design analog building blocks using Cadence and Synopsys EDA tools, optimizing performance under tight area and power constraints.
+            </li>
+
+            <!-- Placeholder: Department / University Scholarship -->
+            <li class="news-item">
+              <span class="news-date">20XX</span>
+              <b><i>Department / University Scholarship</i></b><br />
+              National Yunlin University of Science and Technology (NYUST), Taiwan<br />
+              <i>(Replace this line with a brief description, e.g., awarded for academic excellence in electronics and circuit design.)</i>
+            </li>
+
+            <!-- Placeholder: Other Award -->
+            <li class="news-item">
+              <span class="news-date">20XX</span>
+              <b><i>Competition / Contest Award</i></b><br />
+              <i>(Replace with actual contest name and a one–two sentence summary of what you designed or achieved.)</i>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Last updated: November 2025
+    </footer>
+  </div>
+</body>
+</html>
